@@ -5,10 +5,12 @@ namespace App;
 use App\Concern\Likeable;
 use App\Scopes\PostedScope;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
-class Post extends Model
+class Post extends Model implements HasMedia
 {
-    use Likeable;
+    use Likeable, HasMediaTrait;
 
     /**
      * The attributes that are mass assignable.
