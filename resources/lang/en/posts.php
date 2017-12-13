@@ -4,7 +4,6 @@ return [
   'publish' => 'Publish',
   'posts' => 'Posts',
   'delete' => 'Delete',
-  'delete_thumbnail' => "Delete the picture",
   'edit' => 'Edit',
   'last_posts' => 'Latest posts',
   'create' => 'Create post',
@@ -22,7 +21,6 @@ return [
     'title' => 'Title',
     'content' => 'Content',
     'author' => 'Author',
-    'thumbnail' => 'Post picture',
     'posted_at' => 'Posted at',
   ],
 

@@ -21,7 +21,6 @@ Route::prefix('auth')->group(function () {
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->namespace('Admin')->as('admin.')->group(function () {
     Route::get('dashboard', 'ShowDashboard')->name('dashboard');
     Route::resource('posts', 'PostsController');
-    Route::delete('/posts/{post}/thumbnail', 'PostsThumbnailController@destroy')->name('posts_thumbnail.destroy');
     Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update']]);
     Route::resource('comments', 'CommentsController', ['only' => ['index', 'edit', 'update', 'destroy']]);
 });
@@ -42,7 +41,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', 'PostsController@index')->name('home');
-Route::resource('media', 'MediaController', ['only' => 'show']);
 Route::get('/posts/feed', 'PostsFeedController@index')->name('posts.feed');
 Route::resource('posts', 'PostsController', ['only' => 'show']);
 Route::resource('users', 'UsersController', ['only' => 'show']);

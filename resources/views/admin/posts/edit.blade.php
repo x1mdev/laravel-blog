@@ -3,8 +3,6 @@
 @section('content')
     <p>@lang('posts.show') : {{ link_to_route('posts.show', route('posts.show', $post), $post) }}</p>
 
-    @include('admin/posts/_thumbnail')
-
     {!! Form::model($post, ['route' => ['admin.posts.update', $post], 'method' =>'PUT', 'files' => true]) !!}
         @include('admin/posts/_form')
 
