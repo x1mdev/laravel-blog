@@ -23,6 +23,7 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->namespace('Admin')->
     Route::resource('posts', 'PostsController');
     Route::resource('users', 'UsersController', ['only' => ['index', 'edit', 'update']]);
     Route::resource('comments', 'CommentsController', ['only' => ['index', 'edit', 'update', 'destroy']]);
+    Route::resource('media', 'MediaLibraryController', ['only' => ['index', 'create', 'store']]);
 });
 
 Route::middleware('auth')->group(function () {
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/', 'PostsController@index')->name('home');
 Route::get('/posts/feed', 'PostsFeedController@index')->name('posts.feed');
 Route::resource('posts', 'PostsController', ['only' => 'show']);
+Route::resource('media', 'MediaController', ['only' => 'show']);
 Route::resource('users', 'UsersController', ['only' => 'show']);
 
 Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');

@@ -23,7 +23,7 @@ return [
     /*
      * The class name of the media model that should be used.
      */
-    'media_model' => Spatie\MediaLibrary\Media::class,
+    'media_model' => App\Media::class,
 
     /*
      * The engine that should perform the image conversions.

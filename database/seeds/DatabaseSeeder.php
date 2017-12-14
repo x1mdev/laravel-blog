@@ -3,6 +3,7 @@
 use App\Role;
 use App\Token;
 use App\User;
+use App\MediaLibrary;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,9 @@ class DatabaseSeeder extends Seeder
         // Roles
         Role::firstOrCreate(['name' => Role::ROLE_EDITOR]);
         $role_admin = Role::firstOrCreate(['name' => Role::ROLE_ADMIN]);
+
+        // MediaLibrary
+        MediaLibrary::firstOrCreate([]);
 
         // Users
         if (! User::where('email', 'darthvader@deathstar.ds')->exists()) {
